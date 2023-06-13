@@ -5,8 +5,8 @@
 	<a href="https://github.com/rebeccaYMCG/IOT1026-Project/actions/workflows/formatting.yml">
     <img src="https://github.com/rebeccaYMCG/IOT1026-Project/actions/workflows/formatting.yml/badge.svg"/>
 	<br/>
-    <a href="https://codecov.io/gh/GwGibson/IOT1026-Project" > 
-    <img src="https://codecov.io/gh/GwGibson/IOT1026-Project/branch/main/graph/badge.svg?token=JS0857X5JD"/> 
+    <a href="https://codecov.io/gh/rebeccaYMCG/IOT1026-Project" > 
+    <img src="https://codecov.io/gh/rebeccaYMCG/IOT1026-Project/branch/main/graph/badge.svg?token=73BWRGBI8E"/> 
 	<img title="MIT License" alt="license" src="https://img.shields.io/badge/license-MIT-informational?style=flat-square">	
     </a>
 </p>
