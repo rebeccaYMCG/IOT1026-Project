@@ -3,6 +3,15 @@
     // Represents the player in the game.
     public class Hero
     {
+        private int _agility = 10;
+
+        public int GetAgility()
+        {
+            return (HasSword) ? _agility / 2 : _agility;
+        }
+
+        // The default constructor places the Hero at Location (0,0)
+        public Hero() : this(new Location(0, 0)) { }
         // Creates a new player that starts at the given location.
         public Hero(Location start) => Location = start;
         // Contains all the commands that a player can access.
