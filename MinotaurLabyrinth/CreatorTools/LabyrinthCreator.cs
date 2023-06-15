@@ -46,6 +46,7 @@
             Location start = PlaceEntrance(map);
             PlaceSword(map, start);
             AddRooms(RoomType.Pit, map);
+            AddRooms(RoomType.GoblinGathering, map);
             InitializeMonsters(map);
             return start;
         }
