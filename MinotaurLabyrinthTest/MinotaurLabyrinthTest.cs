@@ -33,4 +33,31 @@ namespace MinotaurLabyrinthTest
             Map map = new Map(1, 1);
         }
     }
+
+    [TestClass]
+    public class MonsterTests
+    {
+        [TestMethod]
+        public void MinotaurTest()
+        {
+            Hero hero = new Hero();
+            Minotaur minotaur = new Minotaur();
+            Map map = new Map(4, 4);
+            hero.HasSword = true;
+            Assert.AreEqual(hero.HasSword, true);
+
+            minotaur.Activate(hero, map);
+            // Charge moves the hero 1 room east and 2 rooms north
+            // -1 is off the map so hero position should be (0, 2)
+            Assert.AreEqual(hero.Location, new Location(0, 2));
+            Assert.AreEqual(hero.HasSword, false);
+
+            minotaur.Activate(hero, map);
+            Assert.AreEqual(hero.Location, new Location(0, 3));
+
+            hero.Location = new Location(3, 1);
+            minotaur.Activate(hero, map);
+            Assert.AreEqual(hero.Location, new Location(2, 3));
+        }
+    }
 }
