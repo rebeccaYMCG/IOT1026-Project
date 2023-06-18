@@ -12,7 +12,7 @@
 </p>
 
 # IOT1026-Project
-Write a description of your `Room` and `Monster` class here.
+Our hero comes face to face with a room of malicous goblins. The air is thick with their musk and echoes of raucous laughter. The hero must navigate this room, either sneaking away, fleeing, or facing the goblin group head-on. The outcome depends on the hero's stealth, agility, and sword skills. Intense battles and desperate escapes unfold, adding to the challenging and dangerous atmosphere of the game.
 
 [Assignment Instructions](docs/instructions.md)  
 [How to start coding](docs/how-to-use.md)  
