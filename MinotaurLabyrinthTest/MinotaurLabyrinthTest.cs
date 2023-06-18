@@ -28,23 +28,24 @@ namespace MinotaurLabyrinthTest
         [TestMethod]
         public void GoblinGatheringTest()
         {
-            GoblinGathering goblinGatheringRoom = new GoblinGathering();
+            GoblinGathering goblinGathering = new GoblinGathering();
             Hero hero = new Hero();
+            hero.SetStealth(15);
             Map map = new Map(1, 1);
 
-            goblinGatheringRoom.Activate(hero, map);
-            Assert.AreEqual(false, goblinGatheringRoom.IsActive);
-            Assert.AreEqual(true, hero.IsAlive);
+            // Act
+            goblinGathering.Activate(hero, map);
 
-            hero.HasSword = true;
-            goblinGatheringRoom.Activate(hero, map);
-            Assert.AreEqual(false, goblinGatheringRoom.IsActive);
-            Assert.AreEqual(true, hero.IsAlive);
+            // Assert
+            Assert.IsFalse(goblinGathering.IsActive);
+            Assert.IsFalse(hero.IsAlive);
 
-            GoblinGathering newGoblinGatheringRoom = new GoblinGathering();
-            newGoblinGatheringRoom.Activate(hero, map);
-            Assert.AreEqual(true, goblinGatheringRoom.IsActive);
-            Assert.AreEqual(false, hero.IsAlive);
+            // Additional assertions for DisplaySense
+            bool result = goblinGathering.DisplaySense(hero, 0);
+            Assert.IsTrue(result);
+
+            result = goblinGathering.DisplaySense(hero, 1);
+            Assert.IsFalse(result);
         }
     }
 
