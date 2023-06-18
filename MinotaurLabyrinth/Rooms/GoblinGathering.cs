@@ -45,17 +45,17 @@
                         ConsoleHelper.WriteLine("Before you can react, they launch themselves at you with savage aggression, their crude weapons slashing through the air.", ConsoleColor.Red);
                         hero.Kill("With a gasp, you feel an intense pain in your stomach.. your arms become heavier as your eyes begin to shut.");
                     }
-                    if (hero.HasSword)
-                    {
-                        IsActive = false;
-                        ConsoleHelper.WriteLine("With adrenaline coursing through your veins, you engage the goblin horde head-on. Swinging your weapon with precision, you parry their attacks and retaliate with swift strikes. Despite sustaining a few wounds, your determination fuels your every move.", ConsoleColor.Red);
-                        ConsoleHelper.WriteLine("The clash of steel fills the room as you push back against the goblins, steadily thinning their numbers. With a final swing, the last goblin falls, leaving you victorious but weary. You take a moment to catch your breath before pressing forward, ready to face the next challenge that awaits.", ConsoleColor.Red);
-                    }
-                    else
-                    {
-                        ConsoleHelper.WriteLine("In a dire confrontation with the goblins, you bravely face them head-on, but lacking a sword, the odds are against you. The goblins swarm around you, their attacks relentless and unforgiving. Despite your determination and resourcefulness, you struggle to defend yourself.", ConsoleColor.Red);
-                        hero.Kill("Overwhelmed by their sheer numbers and ferocity, you eventually succumb to their assault, unable to overcome the formidable challenge.");
-                    }
+                }
+                if (hero.HasSword)
+                {
+                    IsActive = false;
+                    ConsoleHelper.WriteLine("With adrenaline coursing through your veins, you engage the goblin horde head-on. Swinging your weapon with precision, you parry their attacks and retaliate with swift strikes. Despite sustaining a few wounds, your determination fuels your every move.", ConsoleColor.Red);
+                    ConsoleHelper.WriteLine("The clash of steel fills the room as you push back against the goblins, steadily thinning their numbers. With a final swing, the last goblin falls, leaving you victorious but weary. You take a moment to catch your breath before pressing forward, ready to face the next challenge that awaits.", ConsoleColor.Red);
+                }
+                else
+                {
+                    ConsoleHelper.WriteLine("In a dire confrontation with the goblins, you bravely face them head-on, but lacking a sword, the odds are against you. The goblins swarm around you, their attacks relentless and unforgiving. Despite your determination and resourcefulness, you struggle to defend yourself.", ConsoleColor.Red);
+                    hero.Kill("Overwhelmed by their sheer numbers and ferocity, you eventually succumb to their assault, unable to overcome the formidable challenge.");
                 }
             }
         }
