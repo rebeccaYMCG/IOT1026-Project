@@ -31,6 +31,18 @@ namespace MinotaurLabyrinthTest
             GoblinGathering goblinGatheringRoom = new GoblinGathering();
             Hero hero = new Hero();
             Map map = new Map(1, 1);
+
+            goblinGatheringRoom.Activate(hero, map);
+            Assert.AreEqual(goblinGatheringRoom.IsActive, false);
+            Assert.AreEqual(hero.IsAlive, true);
+
+            hero.HasSword = true;
+            goblinGatheringRoom.Activate(hero, map);
+            Assert.AreEqual(hero.IsAlive, true);
+
+            GoblinGathering newGoblinGatheringRoom = new GoblinGathering();
+            newGoblinGatheringRoom.Activate(hero, map);
+            Assert.AreEqual(hero.IsAlive, false);
         }
     }
 
