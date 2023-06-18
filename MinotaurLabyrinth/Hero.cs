@@ -44,11 +44,17 @@
 
         // Explains why a player died.
         public string CauseOfDeath { get; private set; } = "";
+        public int Stealth { get; private set; }
 
         public void Kill(string cause)
         {
             IsAlive = false;
             CauseOfDeath = cause;
+        }
+
+        public void SetStealth(int v)
+        {
+            Stealth = v;
         }
     }
 }
