@@ -6,6 +6,19 @@
         // The rooms are stored in a 2D array. A 3D array would allow for multiple levels in the dungeon. 
         private readonly Room[,] _rooms;
 
+        private readonly List<IMoveable> _moveables = new List<IMoveable>();
+
+        public void AddMoveable(IMoveable moveable)
+        {
+            _moveables.Add(moveable);
+        }
+
+        public void ExecuteMovement(Hero hero, Map map)
+        {
+            foreach (var moveable in _moveables)
+                moveable.Move(hero, map);
+        }
+
         // The total number of rows in this specific game world.
         public int Rows { get; }
 
