@@ -14,6 +14,8 @@
 # IOT1026-Project
 Our hero comes face to face with a room of malicous goblins. The air is thick with their musk and echoes of raucous laughter. The hero must navigate this room, either sneaking away, fleeing, or facing the goblin group head-on. The outcome depends on the hero's stealth, agility, and sword skills. Intense battles and desperate escapes unfold, adding to the challenging and dangerous atmosphere of the game.
 
+The gelatinous cube, a quivering mass of translucent slime, blocks your path. Its amorphous form pulsates with an unsettling rhythm, revealing fragments of trapped objects and bones within. The creature moves with deliberate grace, its ever-changing shape hinting at its predatory nature. A faint acidic scent wafts through the air, a grim reminder of the danger posed by this enigmatic entity.
+
 [Assignment Instructions](docs/instructions.md)  
 [How to start coding](docs/how-to-use.md)  
 [How to update status badges](docs/how-to-update-badges.md)
