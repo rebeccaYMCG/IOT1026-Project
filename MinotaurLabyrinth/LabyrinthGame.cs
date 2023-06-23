@@ -39,6 +39,7 @@
                         currentLocation = Hero.Location;
                         CurrentRoom.Activate(Hero, Map);
                     }
+                    Map.ExecuteMovement(Hero, Map);
                 }
                 Display.ScreenUpdate(Hero, Map);
             }
