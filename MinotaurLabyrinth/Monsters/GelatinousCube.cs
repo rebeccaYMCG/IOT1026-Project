@@ -7,16 +7,29 @@
     {
         private Location _location;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GelatinousCube"/> class with the specified starting location.
+        /// </summary>
+        /// <param name="location">The starting location of the gelatinous cube.</param>
         public GelatinousCube(Location location)
         {
             _location = location;
         }
 
+        /// <summary>
+        /// Gets the current location of the gelatinous cube.
+        /// </summary>
+        /// <returns>The current location of the gelatinous cube.</returns>
         public Location GetLocation()
         {
             return _location;
         }
 
+        /// <summary>
+        /// Activates the gelatinous cube encounter when the hero enters its room.
+        /// </summary>
+        /// <param name="hero">The hero entering the room.</param>
+        /// <param name="map">The map containing the room and the gelatinous cube.</param>
         public override void Activate(Hero hero, Map map)
         {
             ConsoleHelper.WriteLine("You cautiously step into the room, your senses on high alert. A shimmering, translucent figure comes into view—a gelatinous cube, silently pulsating in the darkness.", ConsoleColor.DarkGreen);
@@ -43,6 +56,11 @@
             }
         }
 
+        /// <summary>
+        /// Moves the gelatinous cube towards the hero's location on the map.
+        /// </summary>
+        /// <param name="hero">The hero whose location is being targeted by the gelatinous cube.</param>
+        /// <param name="map">The map containing the gelatinous cube.</param>
         public void Move(Hero hero, Map map)
         {
             var heroLocation = hero.Location;
@@ -91,6 +109,13 @@
             }
         }
 
+        /// <summary>
+        /// Swaps the current location of the gelatinous cube with a new location on the map.
+        /// </summary>
+        /// <param name="map">The map containing the gelatinous cube.</param>
+        /// <param name="currentLocation">The current location of the gelatinous cube.</param>
+        /// <param name="newLocation">The new location to which the gelatinous cube will be moved.</param>
+        /// <returns>The new location if the swap is successful; otherwise, null.</returns>
         private Location? SwapLocation(Map map, Location currentLocation, Location newLocation)
         {
             if (map.IsOnMap(newLocation) && !map.GetRoomAtLocation(newLocation).IsActive)
@@ -103,6 +128,12 @@
             return null;
         }
 
+        /// <summary>
+        /// Displays the sense of the gelatinous cube when the hero is nearby.
+        /// </summary>
+        /// <param name="hero">The hero in the game.</param>
+        /// <param name="heroDistance">The distance between the gelatinous cube and the hero.</param>
+        /// <returns>True if the gelatinous cube's sense is displayed; otherwise, false.</returns>
         public override bool DisplaySense(Hero hero, int heroDistance)
         {
             if (heroDistance == 1)
@@ -113,6 +144,10 @@
             return false;
         }
 
+        /// <summary>
+        /// Displays the representation of the gelatinous cube in the game.
+        /// </summary>
+        /// <returns>The display details of the gelatinous cube.</returns>
         public override DisplayDetails Display()
         {
             return new DisplayDetails("[C]", ConsoleColor.Green);
