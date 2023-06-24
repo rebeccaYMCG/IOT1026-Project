@@ -19,8 +19,28 @@
 
         public override void Activate(Hero hero, Map map)
         {
-            ConsoleHelper.WriteLine("Caught off guard, the gelatinous cube engulfs you in its slimy embrace, restricting your movement.", ConsoleColor.DarkRed);
-            hero.Kill("You have been consumed by the gelatinous cube and perished.");
+            ConsoleHelper.WriteLine("You cautiously step into the room, your senses on high alert. A shimmering, translucent figure comes into view—a gelatinous cube, silently pulsating in the darkness.", ConsoleColor.DarkGreen);
+
+            if (hero.GetStealth() >= 10)
+            {
+                ConsoleHelper.WriteLine("Your stealthy movements allow you to blend seamlessly into the shadows. The gelatinous cube remains unaware of your presence as you silently slip away, avoiding a potentially dangerous encounter.", ConsoleColor.Green);
+                ConsoleHelper.WriteLine("Your heart races with relief as you navigate out of the room, grateful for your stealth and quick thinking.", ConsoleColor.Green);
+            }
+            else if (hero.GetAgility() >= 10)
+            {
+                ConsoleHelper.WriteLine("Reacting swiftly, you channel your agility and nimbleness to outmaneuver the gelatinous cube's slow advances.", ConsoleColor.DarkGreen);
+                ConsoleHelper.WriteLine("With each graceful leap and agile dodge, you manage to stay one step ahead of the gelatinous cube's reach.", ConsoleColor.Green);
+            }
+            else
+            {
+                ConsoleHelper.WriteLine("Your movements betray you, and the gelatinous cube detects your presence. Its slimy form surges forward, attempting to engulf you.", ConsoleColor.DarkRed);
+
+                ConsoleHelper.WriteLine("You desperately struggle to free yourself from the gelatinous cube's slimy grasp, but its grip tightens around you, restricting your movements.", ConsoleColor.Red);
+                ConsoleHelper.WriteLine("The cube's acidic enzymes start dissolving your skin, causing excruciating pain and sapping your strength.", ConsoleColor.Red);
+                ConsoleHelper.WriteLine("With each passing moment, your consciousness fades, succumbing to the relentless and consuming nature of the gelatinous cube.", ConsoleColor.Red);
+
+                hero.Kill("You have been consumed by the gelatinous cube and perished, your body dissolving into its gelatinous form.");
+            }
         }
 
         public void Move(Hero hero, Map map)
@@ -88,6 +108,7 @@
             if (heroDistance == 1)
             {
                 ConsoleHelper.WriteLine("An ominous aura emanates around you filling the air with unease. The gelatinous cube lurks nearby..", ConsoleColor.DarkGreen);
+                return true;
             }
             return false;
         }
